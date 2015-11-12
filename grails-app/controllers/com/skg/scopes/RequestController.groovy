@@ -2,16 +2,17 @@ package com.skg.scopes
 
 class RequestController {
 
+    def viewLocation = "/scopes/request/"
     def index() {
-        render view: "/scopes/request.gsp", model:[title:"Request Scope"]
+        render view: viewLocation + "request.gsp", model:[title:"Request Scope"]
     }
 
     def request(){
-        render view: "/scopes/welcome.gsp", model:[message:"Welcome!!!"]
+        render view: viewLocation + "welcome.gsp", model:[message:"Welcome!!!"]
     }
 
     def nextRequest() {
-        render view: "/scopes/welcome.gsp"
+        render view: viewLocation + "welcome.gsp"
     }
 
     def forwardRequest() {
@@ -20,6 +21,6 @@ class RequestController {
     }
 
     def sayHello() {
-        render view: "/scopes/say-hello.gsp", model:[title:"Request Scope",message:params.message]
+        render view: viewLocation + "say-hello.gsp", model:[title:"Request Scope",message:params.message]
     }
 }
