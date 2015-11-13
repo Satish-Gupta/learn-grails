@@ -13,8 +13,6 @@
 </head>
 
 <body>
-source action: ${sourceAction}
-<br/>
 <pre>
     source action: ${sourceAction}
     flash message: ${flash.message}
