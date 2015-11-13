@@ -8,13 +8,18 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <g:applyLayout name="main"/>
+    %{--<g:applyLayout name="main"/>--}%
     <title></title>
 </head>
 
 <body>
-source action: ${sourceAction}
-<br/>
-${flash.message}
+<pre>
+    source action: ${sourceAction}
+    flash message: ${flash.message}
+    message : ${message}
+    <g:link controller="flash" action="bye">
+        say bye
+    </g:link>
+</pre>
 </body>
 </html>

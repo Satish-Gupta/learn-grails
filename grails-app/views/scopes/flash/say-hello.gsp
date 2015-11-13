@@ -15,10 +15,13 @@
 <body>
 source action: ${sourceAction}
 <br/>
-    ${flash.message}
-    <br/>
+<pre>
+    source action: ${sourceAction}
+    flash message: ${flash.message}
+    message : ${message}
     <g:link controller="flash" action="helloAgain">
         say hello again
     </g:link>
+</pre>
 </body>
 </html>
