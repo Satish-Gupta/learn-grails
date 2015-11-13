@@ -8,11 +8,11 @@ class RequestController {
     }
 
     def request(){
-        render view: viewLocation + "welcome.gsp", model:[message:"Welcome!!!"]
+        render view: viewLocation + "hello-again.gsp", model:[message:"Welcome!!!"]
     }
 
     def nextRequest() {
-        render view: viewLocation + "welcome.gsp"
+        render view: viewLocation + "hello-again.gsp"
     }
 
     def forwardRequest() {
