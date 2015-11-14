@@ -13,9 +13,16 @@
 </head>
 
 <body>
+<pre>
     <g:link controller="session" action="sayHello">
         say hello
     </g:link>
-    <br/>
+    <g:link controller="session" action="putEmployeeInSession">
+        Put employee session
+    </g:link>
+    <g:link controller="session" action="getEmployeeFromSession">
+        get the employee from session
+    </g:link>
+</pre>
 </body>
 </html>

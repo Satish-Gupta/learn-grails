@@ -2,8 +2,9 @@ dataSource {
     pooled = true
     jmxExport = true
     driverClassName = "org.h2.Driver"
-    username = "sa"
-    password = ""
+    username = "root"
+    password = "ffen"
+//    loggingSql = true
 }
 hibernate {
     cache.use_second_level_cache = true

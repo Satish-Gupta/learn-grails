@@ -39,4 +39,31 @@ class SessionController {
         log.info '#bye'
         render view: viewLocation + "bye.gsp", model:[sourceAction: "bye"]
     }
+
+    def putEmployeeInSession() {
+        List employees = Employee.findAll()
+        session.employee = employees[0]
+        def employee = session.employee
+        log.info "#putEmployeeInSession employee: ${employee.name}"
+        log.info "#putEmployeeInSession dep: $employee.department.name"
+        render view: viewLocation + "index.gsp"
+    }
+
+    def getEmployeeFromSession() {
+        def employee = session.employee
+
+        // Re-attach object to session, but don't sync the data with the database.
+        //        employee.attach()
+
+// Re-attach object, but merge any changes with the data in the database.
+// You *must* use the instance returned by the merge() method.
+//        employee = employee.merge()
+
+        log.info "#getDepartmentFromSession isEmployeeAttached: ${employee.isAttached()} employee: $employee.name dep: ${employee.department.name}"
+
+        render "hello"
+//        render view: '/employee/index.gsp', model: [employeeInstanceList]
+    }
+
+
 }
