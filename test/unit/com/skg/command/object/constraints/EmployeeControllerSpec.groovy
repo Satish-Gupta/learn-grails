@@ -1,4 +1,4 @@
-package com.skg.domain.constraints
+package com.skg.command.object.constraints
 
 
 

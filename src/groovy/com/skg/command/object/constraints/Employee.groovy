@@ -1,5 +1,9 @@
-package com.skg.domain.constraints
+package com.skg.command.object.constraints
 
+import grails.validation.Validateable
+
+
+@Validateable
 class Employee {
 
     String name

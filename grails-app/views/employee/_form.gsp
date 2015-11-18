@@ -7,7 +7,7 @@
 		<g:message code="employee.empID.label" default="Emp ID" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="empID" required="" value="${employeeInstance?.empID}"/>
+	<g:textField name="empID"  value="${employeeInstance?.empID}"/>
 
 </div>
 
@@ -25,7 +25,7 @@
 		<g:message code="employee.status.label" default="Status" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="status" required="" value="${employeeInstance?.status}"/>
+	<g:textField name="status"  value="${employeeInstance?.status}"/>
 
 </div>
 
@@ -34,7 +34,7 @@
 		<g:message code="employee.department.label" default="Department" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="department" required="" value="${employeeInstance?.department}"/>
+	<g:textField name="department"  value="${employeeInstance?.department}"/>
 
 </div>
 
@@ -61,7 +61,7 @@
 		<g:message code="employee.email.label" default="Email" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="email" required="" value="${employeeInstance?.email}"/>
+	<g:textField name="email"  value="${employeeInstance?.email}"/>
 
 </div>
 
@@ -79,7 +79,7 @@
 		<g:message code="employee.role.label" default="Role" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="role" required="" value="${employeeInstance?.role}"/>
+	<g:textField name="role"  value="${employeeInstance?.role}"/>
 
 </div>
 
@@ -88,7 +88,7 @@
 		<g:message code="employee.name.label" default="Name" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="name" required="" value="${employeeInstance?.name}"/>
+	<g:textField name="name" value="${employeeInstance?.name}"/>
 
 </div>
 

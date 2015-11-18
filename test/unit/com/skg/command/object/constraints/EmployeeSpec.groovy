@@ -1,4 +1,4 @@
-package com.skg.domain.constraints
+package com.skg.command.object.constraints
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification

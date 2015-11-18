@@ -1,4 +1,4 @@
-package com.skg.domain.constraints
+package com.skg.command.object.constraints
 
 
 
@@ -8,19 +8,9 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class EmployeeController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Employee.list(params), model:[employeeInstanceCount: Employee.count()]
-    }
-
-    def show(Employee employeeInstance) {
-        respond employeeInstance
-    }
-
-    def create() {
-        respond new Employee(params)
+        render view: "create"
     }
 
     @Transactional
@@ -29,21 +19,13 @@ class EmployeeController {
             notFound()
             return
         }
+        println employeeInstance.validate()
         println employeeInstance.errors
         if (employeeInstance.hasErrors()) {
             respond employeeInstance.errors, view:'create'
             return
         }
-
-        employeeInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'employee.label', default: 'Employee'), employeeInstance.id])
-                redirect employeeInstance
-            }
-            '*' { respond employeeInstance, [status: CREATED] }
-        }
+        render view: "create"
     }
 
     def edit(Employee employeeInstance) {
@@ -62,7 +44,6 @@ class EmployeeController {
             return
         }
 
-        employeeInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
@@ -81,7 +62,6 @@ class EmployeeController {
             return
         }
 
-        employeeInstance.delete flush:true
 
         request.withFormat {
             form multipartForm {
