@@ -2,6 +2,7 @@ package com.skg.learngrails.ControllerResult
 
 import grails.converters.JSON
 import grails.converters.XML
+import org.springframework.web.servlet.ModelAndView
 
 class EmployeeController {
 
@@ -14,21 +15,21 @@ class EmployeeController {
        [employee:employee]
     }
 
-    def urlFormatParameter() {
+    def showEmployee() {
         Employee employee = createEmployee()
 
-        //use - http://localhost:8080/employee/urlFormatParameter?format=json for json , http://localhost:8080/employee/urlFormatParameter?format=xml for xml
-        withFormat {
-            html employee: employee //  a format of "all" will trigger the html handler (html is the first block and there is no * block).
-            json { render employee as JSON }
-            xml { render employee as XML }
-        }
+        return new ModelAndView("employeeDetails", [ employee : employee ])
     }
 
-    def urlFileExtension() {
+    def displayEmployee() {
         Employee employee = createEmployee()
 
-        //use - http://localhost:8080/employee/contentNegotiation.json for json , http://localhost:8080/employee/contentNegotiation.xml for xml
+        render view: "employeeDetails",model: [ employee : employee ]
+    }
+
+    def getEmployee() {
+        Employee employee = createEmployee()
+
         respond employee, [model: [employee: employee]]
     }
 
