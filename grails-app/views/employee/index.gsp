@@ -13,12 +13,26 @@
 
 <body>
 <pre>
-    <g:link controller="employee" action="employeeDetails">employee Details</g:link>
+    <g:link controller="employee" action="renderText">render Text</g:link>
     <br/>
-    <g:link controller="employee" action="showEmployee">return new ModelAndView("/employeeDetails", [ employee : employee ])
+    <g:link controller="employee" action="renderXML">render XML
     </g:link>
     <br/>
-    <g:link controller="employee" action="displayEmployee">render view: "/employeeDetails",model: [ employee : employee ]
+    <g:link controller="employee" action="renderViewWithModel">render View With Model
+    </g:link>
+    <g:link controller="employee" action="renderViewWithCollection">render View With Collection
+    </g:link>
+    <g:link controller="employee" action="renderViewWithBean">render View With Bean
+    </g:link>
+    <g:link controller="employee" action="renderMarkup">render Markup
+    </g:link>
+    <g:link controller="employee" action="renderXML1">render XML
+    </g:link>
+    <g:link controller="employee" action="renderJSON">render JSON
+    </g:link>
+    <g:link controller="employee" action="getEmployeeAsJSON">render employee as JSON
+    </g:link>
+    <g:link controller="employee" action="renderFile">render file
     </g:link>
 </pre>
 </body>
