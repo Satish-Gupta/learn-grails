@@ -9,27 +9,25 @@ class EmployeeController {
 
     }
 
-    def employeeDetails() {
-        Employee employee = createEmployee()
-       [employee:employee]
-    }
-
-    def urlFormatParameter() {
-        Employee employee = createEmployee()
-
-        //use - http://localhost:8080/employee/urlFormatParameter?format=json for json , http://localhost:8080/employee/urlFormatParameter?format=xml for xml
-        withFormat {
-            html employee: employee //  a format of "all" will trigger the html handler (html is the first block and there is no * block).
-            json { render employee as JSON }
-            xml { render employee as XML }
-        }
-    }
-
-    def urlFileExtension() {
+    def showEmployeeDetails() {
         Employee employee = createEmployee()
 
         //use - http://localhost:8080/employee/contentNegotiation.json for json , http://localhost:8080/employee/contentNegotiation.xml for xml
         respond employee, [model: [employee: employee]]
+    }
+
+    def displayEmployeeDetails() {
+        Employee employee = createEmployee()
+
+        //use - http://localhost:8080/employee/contentNegotiation.json for json , http://localhost:8080/employee/contentNegotiation.xml for xml
+        respond employee
+    }
+
+    def getEmployeeDetails() {
+        Employee employee = createEmployee()
+
+        // pick the best content type to respond with from the given formats
+        respond employee, [formats:['xml', 'json']]
     }
 
     def private createEmployee() {

@@ -13,7 +13,9 @@
 
 <body>
 <pre>
-    <g:link controller="employee" action="employeeDetails">employee Details</g:link>
+    <g:link controller="employee" action="showEmployeeDetails">show employee details</g:link>
+    <g:link controller="employee" action="displayEmployeeDetails">display employee details</g:link>
+    <g:link controller="employee" action="getEmployeeDetails">get employee details</g:link>
 </pre>
 </body>
 </html>
