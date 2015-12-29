@@ -13,16 +13,15 @@
 
 <body>
 <pre>
-    Employee :
+    <g:each in="${0..100}"><br/>....</g:each>
+    <div id="bottom">
+        
+    </div>
+    Employee:
     id - ${employee.empID}
     firstName - ${employee.firstName}
     lastName - ${employee.lastName}
     department - ${employee.department.name}
-
-    <g:each in="${0..100}"><br/></g:each>
-    <div id="bottom">
-        
-    </div>
 </pre>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.skg.learngrails.ControllerResult
+package com.skg.learngrails.redirect
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification

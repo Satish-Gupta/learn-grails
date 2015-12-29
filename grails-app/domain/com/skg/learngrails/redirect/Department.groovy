@@ -1,4 +1,4 @@
-package com.skg.learngrails.ControllerResult
+package com.skg.learngrails.redirect
 
 class Department {
 

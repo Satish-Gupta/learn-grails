@@ -13,12 +13,18 @@
 
 <body>
 <pre>
-    <g:link controller="employee" action="employeeDetails">employee Details</g:link>
+    <g:link controller="employee" action="getEmployeeDetails"> get employee Details</g:link>
     <br/>
-    <g:link controller="employee" action="showEmployee">return new ModelAndView("/employeeDetails", [ employee : employee ])
+    <g:link controller="employee" action="getEmployee">get Employee
     </g:link>
     <br/>
-    <g:link controller="employee" action="displayEmployee">render view: "/employeeDetails",model: [ employee : employee ]
+    <g:link controller="employee" action="readEmployee"> read employee
+    </g:link>
+    <br/>
+    <g:link controller="employee" action="getEmployeeDepartment"> get Employee Department
+    </g:link>
+    <br/>
+    <g:link controller="employee" action="displayEmployeeDepartment"> display Employee Department
     </g:link>
 </pre>
 </body>

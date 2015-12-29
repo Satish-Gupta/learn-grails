@@ -1,4 +1,4 @@
-package com.skg.learngrails.ControllerResult
+package com.skg.learngrails.redirect
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification
@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(Department)
-class DepartmentSpec extends Specification {
+@TestFor(Employee)
+class EmployeeSpec extends Specification {
 
     def setup() {
     }
