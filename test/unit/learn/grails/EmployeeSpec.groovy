@@ -1,6 +1,6 @@
 package learn.grails
 
-import com.skg.learngrails.ControllerResult.Employee
+import com.skg.learngrails.chain.Employee
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 

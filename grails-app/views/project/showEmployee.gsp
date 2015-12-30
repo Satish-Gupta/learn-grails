@@ -13,7 +13,7 @@
 
 <body>
 <pre>
-    Employee :
+    Employee:
     id - ${empID}
     firstName - ${firstName}
     lastName - ${lastName}
