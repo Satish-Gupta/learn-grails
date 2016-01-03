@@ -1,4 +1,4 @@
-package com.skg.learngrails.redirect
+package com.skg.learngrails.forward
 
 
 class EmployeeController {
@@ -9,7 +9,7 @@ class EmployeeController {
 
     def getEmployeeDetails() {
         log.info "#$actionName"
-        redirect action: "employeeDetails"
+        forward action: "employeeDetails"
     }
 
     def employeeDetails() {
@@ -20,7 +20,8 @@ class EmployeeController {
 
     def getEmployee() {
         log.info "#$actionName"
-        redirect action: "showEmployee", fragment: "bottom"
+        // apparently fragment has no effect in forward
+        forward action: "showEmployee", fragment: "bottom"
     }
 
     def showEmployee() {
@@ -31,21 +32,21 @@ class EmployeeController {
 
     def getEmployeeDepartment() {
         log.info "#$actionName"
-        redirect controller: "project", action: "showDepartment"
+        forward controller: "project", action: "showDepartment"
+    }
+
+    def readEmployee() {
+        log.info "#$actionName"
+        forward controller: "project", action: "showDepartment", params: [id:'999']
     }
 
     def displayEmployeeDepartment() {
         log.info "#$actionName"
         Employee employee = createEmployee()
-        redirect controller: "project", id: employee.empID,action: "showDepartment"
+        forward controller: "project", id: employee.empID,action: "showDepartment"
     }
 
-    def readEmployee() {
-        log.info "#$actionName"
-        redirect url:"http://localhost:8080/project/showDepartment"
-        //FIXME:
- // not working //        redirect uri:"employee/employeeDetails"
-    }
+
 
     def private createEmployee() {
         Employee employee = new Employee()

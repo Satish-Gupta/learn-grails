@@ -1,6 +1,6 @@
 package learn.grails
 
-import com.skg.learngrails.redirect.Employee
+import com.skg.learngrails.forward.Employee
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 

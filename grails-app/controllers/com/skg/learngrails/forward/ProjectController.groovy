@@ -1,4 +1,4 @@
-package com.skg.learngrails.redirect
+package com.skg.learngrails.forward
 
 class ProjectController {
 
