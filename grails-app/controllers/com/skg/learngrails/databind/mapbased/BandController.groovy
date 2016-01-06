@@ -51,11 +51,14 @@ class BandController {
     }
 
     @Transactional
-    def update(Band bandInstance) {
-        if (bandInstance == null) {
-            notFound()
-            return
-        }
+    def update() {
+        // indexes matter for List since its ordered
+        def bindingMap = [name: 'Genesis',
+                          'albums[2]': [title: 'ABC', numberOfTracks: 6],
+                          'albums[0]': [title: 'DEF', numberOfTracks: 7],
+                          'albums[1]': [title: 'XYZ', numberOfTracks: 3]]
+        def bandInstance = Band.get(params.id)
+        bandInstance.properties = bindingMap
 
         if (bandInstance.hasErrors()) {
             respond bandInstance.errors, view: 'edit'
