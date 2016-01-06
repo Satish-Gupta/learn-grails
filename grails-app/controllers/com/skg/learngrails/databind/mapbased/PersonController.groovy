@@ -27,6 +27,7 @@ class PersonController {
     def save() {
         def bindingMap = [firstName: params.firstName, lastName: params.lastName, age: params.age]
         def personInstance = new Person(bindingMap)
+//        def personInstance = new Person(params)
         personInstance.save flush:true
 
         request.withFormat {
@@ -48,6 +49,7 @@ class PersonController {
         def bindingMap = [firstName: params.firstName, lastName: params.lastName, age: params.age]
         def personInstance = Person.get(params.id)
         personInstance.properties = bindingMap
+//        personInstance.properties = params
         personInstance.save flush:true
 
         request.withFormat {
